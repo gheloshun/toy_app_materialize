@@ -1,16 +1,6 @@
 <div class="row">
 <%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h6><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h6>
-
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages' %>
 <div class="row">
   <div class="col l6">
     <div class="field">
@@ -44,10 +34,12 @@
   </div>
 </div>
 <br>
+<% if !current_user.nil? %>
 <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
 </div>
+<% end %>
 <br>
 <div class="actions">
   <%= form.submit %>

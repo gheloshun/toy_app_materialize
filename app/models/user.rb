@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def display_image
     image.variant(resize_to_limit: [100, 100])
   end
+
+  def display_avatar
+    image.variant(resize_to_limit: [200, 200])
+  end
 end
