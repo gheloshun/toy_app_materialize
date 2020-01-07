@@ -22,6 +22,12 @@ class User < ApplicationRecord
     image.variant(resize_to_limit: [200, 200])
   end
   def forget
-    update_attribute(:remember_digest, nil  )
+    update_attribute(:remember_digest, nil)
   end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+  
 end
