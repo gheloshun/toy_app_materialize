@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :account_activations, only: [:edit]
   root to: 'static_pages#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
