@@ -24,8 +24,5 @@
   </div>
 </div>
 
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-light btn-small green" if @user.id == session[:user_id] %>
+<%= link_to 'Back', users_path, class: "waves-effect waves-light btn-small indigo accent-1" %>

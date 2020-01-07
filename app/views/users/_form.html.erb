@@ -33,16 +33,20 @@
     <%= form.password_field :password_confirmation %>
   </div>
 </div>
-<br>
 <% if !current_user.nil? %>
 <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
 </div>
 <% end %>
-<br>
+<hr/>
 <div class="actions">
-  <%= form.submit %>
+  <% if !current_user.nil? %>
+    <%= form.submit "Update User", :class => 'btn-small waves-effect waves-light light-blue' %>
+  <% else %>
+    <%= form.submit "Create User", :class => 'btn-small waves-effect waves-light light-blue' %>
+  <% end %>
+
 </div>
 <% end %>
 </div>

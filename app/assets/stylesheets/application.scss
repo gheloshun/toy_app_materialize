@@ -1,6 +1,9 @@
  @import "materialize";
  @charset "UTF-8";
 
+// ICONS
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
  // Color
  @import "materialize/components/color-variables";
  @import "materialize/components/color-classes";
@@ -56,4 +59,14 @@ table{
 /* error_explanation */
 #error_explanation {
   color: red;
+}
+
+/* PAGINATION DESIGN */
+.pagination{
+  li.active{
+    a{
+      background-color: orange;
+      color: #fff;
+    }
+  }
 }
