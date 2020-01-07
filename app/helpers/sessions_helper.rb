@@ -2,31 +2,23 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
-
-<<<<<<< HEAD
-=======
   #remember users
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent.[:remember_token] = user.remember_token
+    cookies.permanent[:remember_token] = user.remember_token
   end
-
->>>>>>> advanced-login
 
   # GET THE CURRENT USER THAT IS LOGGED IN
   def current_user
     if session[:user_id]
       @current_user ||= User.find_by(id: session[:user_id])
-<<<<<<< HEAD
-=======
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
         @current_user = user
       end
->>>>>>> advanced-login
     end
   end
 
@@ -35,8 +27,6 @@ module SessionsHelper
     !current_user.nil?
   end
 
-<<<<<<< HEAD
-=======
   def forget (user)
     user.forget
     cookies.delete(:user_id)
@@ -49,5 +39,4 @@ module SessionsHelper
     @current_user = nil
   end
 
->>>>>>> advanced-login
 end

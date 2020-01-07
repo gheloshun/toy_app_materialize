@@ -21,11 +21,7 @@ class User < ApplicationRecord
   def display_avatar
     image.variant(resize_to_limit: [200, 200])
   end
-<<<<<<< HEAD
-=======
-
   def forget
     update_attribute(:remember_digest, nil  )
   end
->>>>>>> advanced-login
 end
