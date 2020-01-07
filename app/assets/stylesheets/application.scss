@@ -56,6 +56,12 @@ table{
   width: 100;
 }
 
+.login-container {
+  display: inline-block;
+  padding: 32px 48px 0px 48px;
+  border: 1px solid #EEE;
+}
+
 /* error_explanation */
 #error_explanation {
   color: red;
@@ -69,4 +75,22 @@ table{
       color: #fff;
     }
   }
+}
+
+/* forgot password */
+.password-form {
+  display: inline-block;
+  padding: 32px 48px 32px 48px;
+  border: 1px solid #EEE;
+  margin-top: 100px;
+  h4 {
+    text-align: center;
+  }
+  label{
+    font-size: large;
+  }
+}
+
+.password-container {
+  text-align: center;
 }

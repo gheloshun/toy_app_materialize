@@ -3,7 +3,7 @@
     <center>
       <h5 class="indigo-text">Please, login into your account</h5>
       <div class="container">
-        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+        <div class="login-container z-depth-1 grey lighten-4 row">
 
           <%= form_for(:session, url: login_path) do |f| %>
 
@@ -20,7 +20,7 @@
                 <%= f.label :password, "Enter your password" %>
               </div>
               <label style='float: right;'>
-                <b><%= link_to "Forgot Password?", "#", class: "pink-text" %></b>
+                <b><%= link_to "Forgot Password?", new_password_reset_path, class: "pink-text" %></b>
 							</label>
             </div>
             <div class="row">
