@@ -1,2 +1,2 @@
-class ApplicationController < ActionController::Base
+gitclass ApplicationController < ActionController::Base
 end

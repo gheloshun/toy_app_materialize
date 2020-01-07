@@ -1,0 +1,46 @@
+<div class="section"></div>
+  <main>
+    <center>
+      <%= image_tag("rails_logo.png", class: "login_image", style: "width: 250px;") %>
+      <h5 class="indigo-text">Please, login into your account</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+          <%= form_for(:session, url: login_path) do |f| %>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <%= f.text_field :email, class: "validate" %>
+                <%= f.label :email, "Enter your email" %>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <%= f.password_field :password %>
+                <%= f.label :password, "Enter your password" %>
+              </div>
+              <label style='float: right;'>
+                <b><%= link_to "Forgot Password?", "#", class: "pink-text" %></b>
+							</label>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.label :remember_me do %>
+                  <%= f.check_box :remember_me %>
+                  <span>Remember me</span>
+                <% end %>
+              </div>
+            </div>
+            <center>
+              <div class='row'>
+                <%= f.submit "LOG IN", class: "col s12 btn btn-large waves-effect indigo" %>
+              </div>
+            </center>
+          <% end %>
+        </div>
+      </div>
+    </center>
+  </main>
