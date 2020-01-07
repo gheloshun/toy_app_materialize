@@ -9,6 +9,11 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
 
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
   def display_image
     image.variant(resize_to_limit: [100, 100])
   end
@@ -16,4 +21,11 @@ class User < ApplicationRecord
   def display_avatar
     image.variant(resize_to_limit: [200, 200])
   end
+<<<<<<< HEAD
+=======
+
+  def forget
+    update_attribute(:remember_digest, nil  )
+  end
+>>>>>>> advanced-login
 end
