@@ -1,8 +1,3 @@
 <h5>New User</h5>
 
 <%= render 'form', user: @user %>
-<% if !current_user.nil? %>
-  <%= link_to 'Back', users_path, class: "btn-small waves-effect waves-light indigo accent-1" %>
-<% else %>
-  <%= link_to 'Back', login_path, class: "btn-small waves-effect waves-light indigo accent-1" %>
-<% end %>
