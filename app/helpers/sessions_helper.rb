@@ -47,6 +47,10 @@ module SessionsHelper
     session.delete(:forwarding_url)
   end
 
+  def current_user?(user)
+user && user == current_user
+end
+
   # Stores the URL trying to be accessed.
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
