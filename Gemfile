@@ -8,9 +8,17 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 gem 'jquery-turbolinks'
 
+#pagination
+gem 'will_paginate', '3.1.8'
+gem 'will_paginate-materialize', git: 'https://github.com/mldoscar/will_paginate-materialize', branch: 'master'
+
+#faker
+gem 'faker', '2.1.2'
+
 #image_processing
 gem 'image_processing', '1.9.3'
 gem 'mini_magick', '4.9.5'
+gem 'active_storage_validations', '0.8.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'

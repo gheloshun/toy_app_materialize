@@ -1,6 +1,6 @@
 <div class="row">
 <%= form_with(model: user, local: true) do |form| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: form.object %>
 <div class="row">
   <div class="col l6">
     <div class="field">
@@ -33,16 +33,19 @@
     <%= form.password_field :password_confirmation %>
   </div>
 </div>
-<br>
 <% if !current_user.nil? %>
 <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
 </div>
 <% end %>
-<br>
 <div class="actions">
-  <%= form.submit %>
+  <% if !current_user.nil? %>
+    <%= form.submit "Update User", :class => 'btn-small waves-effect waves-light light-blue' %>
+  <% else %>
+    <%= form.submit "Create User", :class => 'btn-small waves-effect waves-light light-blue' %>
+  <% end %>
+
 </div>
 <% end %>
 </div>

@@ -1,0 +1,15 @@
+<div class="password-container">
+  <div class="password-form">
+    <h4>Forgot password</h4>
+    <div class="row">
+      <div class="col l12">
+        <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+          <br/><br/>
+          <%= f.submit "Send Reset Password Link", class: "col s12 btn btn-large waves-effect indigo" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
