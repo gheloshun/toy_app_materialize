@@ -1,0 +1,18 @@
+<section>
+  <h1 class="center-align">
+      <% if current_user.image.attached? %>
+        <%= link_to image_tag(@current_user.display_avatar, class: "profile-image responsive-img circle z-depth-5"), current_user %>
+      <% else %>
+        <%= link_to image_tag("blank_image", class: "profile-image responsive-img circle z-depth-5", size: 200), current_user %>
+      <% end %>
+    </h1>
+    <h5 class="center-align">
+      <%= current_user.first_name %> <%= current_user.last_name %>
+    </h5>
+    <div class="row center-align">
+      <span><%= link_to "view my profile", current_user, class: "btn-small waves-effect waves-light green" %></span>
+    </div>
+    <div class="row center-align">
+      <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+    </div>
+  </section>

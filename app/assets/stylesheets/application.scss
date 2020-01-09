@@ -41,6 +41,11 @@
  @import "materialize/components/datepicker";
  @import "materialize/components/timepicker";
 
+
+/* side bar */
+
+
+
 /* tables */
 table{
   font-size: small;
@@ -93,4 +98,51 @@ table{
 
 .password-container {
   text-align: center;
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: gray;
+    display: block;
+    margin-left: 60px;
+  }
+  .user-avatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+    input {
+      border: 0;
+  }
 }

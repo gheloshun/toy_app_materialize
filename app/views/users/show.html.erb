@@ -1,28 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h3>User Information</h3>
+<h5>User's Profile</h5>
 <hr/>
 <div class="row">
-  <div class="col l6">
-    <p>
-      <strong>First name:</strong>
-      <%= @user.first_name %>
-    </p>
-    <p>
-      <strong>Last name:</strong>
-      <%= @user.last_name %>
-    </p>
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-  </div>
-  <div class="col l6">
-    <p>
-      <%= image_tag(@user.display_avatar) if @user.image.attached? %>
-    </p>
+  <aside class="col l4">
+    <section>
+      <h1 class="center-align">
+        <% if @user.image.attached? %>
+          <%= image_tag(@user.display_avatar, class: "profile-image responsive-img circle z-depth-5") %>
+        <% else %>
+          <%= image_tag("blank_image", class: "profile-image responsive-img circle z-depth-5 center", size: 200) %>
+        <% end %>
+
+      </h1>
+      <h5 class="center-align">
+        <%= @user.first_name %> <%= @user.last_name %>
+      </h5>
+    </section>
+  </aside>
+  <div class="col l8">
+    <% if @user.microposts.any? %>
+      <h5>News Feed (<%= @user.microposts.count %>)</h5>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_user_path(@user), class: "waves-effect waves-light btn-small green" if @user.id == session[:user_id] %>
-<%= link_to 'Back', users_path, class: "waves-effect waves-light btn-small indigo accent-1" %>
