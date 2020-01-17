@@ -15,18 +15,27 @@
 </div>
   <div class="row mt-5">
     <div class="card card-border z-depth-2">
+
       <% if micropost.images.attached? %>
+        <% if micropost.images.count == 0 %>
+        <div class="card-image">
+          <% (0...micropost.images.count).each do |image| %>
+            <%= image_tag micropost.display_micropost_image(image) %>
+          <% end %>
+        </div>
+        <% else %>
         <div class="card-image">
           <div class="carousel">
-            <% (2...micropost.images.count).each do |image| %>
+            <% (0...micropost.images.count).each do |image| %>
             <div class="carousel-item">
               <div class="row">
-                <%= image_tag micropost.display_micropost_image(image) %>
+                <%= image_tag(micropost.images[image], class: "image-carousel") %>
               </div>
             </div>
             <% end %>
           </div>
         </div>
+        <% end %>
         <div class="card-content">
           <%= micropost.content %>
         </div>

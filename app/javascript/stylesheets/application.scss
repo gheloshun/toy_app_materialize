@@ -1,0 +1,116 @@
+@import "materialize-css/dist/css/materialize";
+
+
+/* tables */
+table{
+  font-size: small;
+  a {
+    width: 100px;
+    font-size: smaller;
+  }
+}
+
+/* login form */
+
+.login_image {
+  width: 100;
+}
+
+.login-container {
+  display: inline-block;
+  padding: 32px 48px 0px 48px;
+  border: 1px solid #EEE;
+}
+
+/* error_explanation */
+#error_explanation {
+  color: red;
+}
+
+.alert-danger {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: large;
+}
+
+/* PAGINATION DESIGN */
+.pagination{
+  li.active{
+    a{
+      background-color: orange;
+      color: #fff;
+    }
+  }
+}
+
+/* forgot password */
+.password-form {
+  display: inline-block;
+  padding: 32px 48px 32px 48px;
+  border: 1px solid #EEE;
+  margin-top: 100px;
+  h4 {
+    text-align: center;
+  }
+  label{
+    font-size: large;
+  }
+}
+
+.password-container {
+  text-align: center;
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: gray;
+    display: block;
+    margin-left: 60px;
+  }
+  .user-avatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+    input {
+      border: 0;
+  }
+}
+
+.carousel-item {
+  min-height: 250px;
+  min-width: 250px;
+}
