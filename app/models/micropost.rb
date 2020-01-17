@@ -11,7 +11,4 @@ class Micropost < ApplicationRecord
       message: "should be less than 5MB"
     }
 
-  #  def display_micropost_image input
-  #    return self.images[input].variant(resize_to_limit: [500, 500])
-  #  end
 end
