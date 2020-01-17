@@ -1,0 +1,44 @@
+<% provide(:title, @title) %>
+
+<div class="row">
+  <aside class="col l4">
+    <section>
+      <h1 class="center-align">
+        <% if @user.image.attached? %>
+          <%= image_tag(@user.display_avatar, class: "profile-image responsive-img circle z-depth-5") %>
+        <% else %>
+          <%= image_tag("blank_image", class: "profile-image responsive-img circle z-depth-5 center", size: 200) %>
+        <% end %>
+      </h1>
+      <h5 class="center-align">
+        <%= @user.first_name %> <%= @user.last_name %>
+      </h5>
+      <div class="row center-align">
+        <%= render 'follow_form' if logged_in? %>
+      </div>
+      <section class="stats center-align">
+        <%= render 'shared/stats' %>
+      </section>
+
+    </section>
+  </aside>
+  <div class="col l8">
+    <h5><%= @title %></h5>
+    <hr/>
+    <div class="row">
+      <section>
+        <% if @users.any? %>
+          <div class="user_avatars">
+            <% @users.each do |user| %>
+              <% if @user.image.attached? %>
+                <%= link_to image_tag(@user.image, class: "follow-avatar"), user %>
+              <% else %>
+                <%= link_to image_tag("blank_image", class: "follow-avatar"), user %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

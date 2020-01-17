@@ -2,7 +2,7 @@
 
 
 /* tables */
-table{
+.mdl-data-table {
   font-size: small;
   a {
     width: 100px;
@@ -113,4 +113,10 @@ span.image {
 .carousel-item {
   min-height: 250px;
   min-width: 250px;
+}
+
+.follow-avatar {
+  width: 50px;
+  margin-left: 20px;
+  margin-right: 10px;
 }
