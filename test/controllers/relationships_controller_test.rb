@@ -1,14 +1,19 @@
 require 'test_helper'
 
 class RelationshipsControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
-    get relationships_create_url
-    assert_response :success
+
+  test "create should require logged-in user" do
+    assert_no_difference 'Relationship.count' do
+      post relationships_path
+    end
+    assert_redirected_to login_url
   end
 
-  test "should get destroy" do
-    get relationships_destroy_url
-    assert_response :success
+  test "destroy should require logged-in user" do
+    assert_no_difference 'Relationship.count' do
+      delete relationship_path(relationships(:one))
+    end
+    assert_redirected_to login_url
   end
 
 end
