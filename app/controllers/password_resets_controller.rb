@@ -26,7 +26,7 @@ class PasswordResetsController < ApplicationController
     if params[:user][:password].empty?
       @user.errors.add(:password, "can't be empty")
       render 'edit'
-    elseif @user.update(user_params)
+    elsif @user.update(user_params)
       log_in @user
       @user.update_attribute(:reset_digest, nil)
       flash[:success] = "Password has been reset."
@@ -53,7 +53,7 @@ class PasswordResetsController < ApplicationController
     end
 
     def check_expiration
-      if @user.password_expired?
+      if @user.password_reset_expired?
         flash[:danger] = "Password reset has expired."
         redirect_to new_password_reset_url
       end
