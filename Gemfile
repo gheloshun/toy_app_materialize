@@ -3,6 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+#graphql
+gem 'graphql-client'
+gem 'graphql'
+
+
 gem 'rails-controller-testing'
 
 #materialize css

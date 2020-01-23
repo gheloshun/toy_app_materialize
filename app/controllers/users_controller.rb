@@ -19,13 +19,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
       if @user.save
@@ -92,7 +89,6 @@ class UsersController < ApplicationController
       end
     end
 
-  # Confirms the correct user.
   # Confirms the correct user.
   def correct_user
     @user = User.find(params[:id])
