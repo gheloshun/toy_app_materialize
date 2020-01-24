@@ -8,5 +8,6 @@ module Mutations
       micropost = Micropost.find_by_id(id).destroy
       { micropost: micropost }
     end
+
   end
 end
