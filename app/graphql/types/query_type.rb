@@ -13,7 +13,7 @@ module Types
     end
 
     def logged_in_user
-      context[:current_user]
+      user = User.find_by_id(context[:current_user].id)
     end
 
   end
