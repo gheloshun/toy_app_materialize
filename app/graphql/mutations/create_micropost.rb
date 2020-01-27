@@ -5,7 +5,7 @@ module Mutations
         field :micropost, Types::MicropostType, null: false
 
         def resolve(content:)
-            Micropost.create!(
+            micropost = Micropost.create!(
                 content: content,
                 user: context[:current_user]
             )

@@ -8,5 +8,6 @@ module Types
     field :create_micropost, mutation: Mutations::CreateMicropost
     field :account_activation, mutation: Mutations::AccountActivation
     field :add_authorization, mutation: Mutations::AddAuthorization
+    field :delete_user, mutation: Mutations::DeleteUser
   end
 end
