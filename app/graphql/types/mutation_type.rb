@@ -11,5 +11,6 @@ module Types
     field :delete_user, mutation: Mutations::DeleteUser
     field :reset_password, mutation: Mutations::ResetPassword
     field :unfollow_user, mutation: Mutations::UnfollowUser
+    field :log_out, mutation: Mutations::LogOut
   end
 end
