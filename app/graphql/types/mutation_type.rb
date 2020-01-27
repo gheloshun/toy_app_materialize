@@ -5,5 +5,6 @@ module Types
     field :sign_in_user, mutation: Mutations::SignInUser
     field :delete_micropost, mutation: Mutations::DeleteMicropost
     field :follow_user, mutation: Mutations::FollowUser
+    field :create_micropost, mutation: Mutations::CreateMicropost
   end
 end
