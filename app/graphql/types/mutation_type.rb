@@ -7,5 +7,6 @@ module Types
     field :follow_user, mutation: Mutations::FollowUser
     field :create_micropost, mutation: Mutations::CreateMicropost
     field :account_activation, mutation: Mutations::AccountActivation
+    field :add_authorization, mutation: Mutations::AddAuthorization
   end
 end

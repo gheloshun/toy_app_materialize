@@ -6,5 +6,6 @@ module Types
     field :email, String, null: true
     field :password, String, null: true
     field :activated, Boolean, null: true
+    field :admin, Boolean, null: true
   end
 end
