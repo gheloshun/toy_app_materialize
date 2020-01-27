@@ -9,5 +9,6 @@ module Types
     field :account_activation, mutation: Mutations::AccountActivation
     field :add_authorization, mutation: Mutations::AddAuthorization
     field :delete_user, mutation: Mutations::DeleteUser
+    field :reset_password, mutation: Mutations::ResetPassword
   end
 end
