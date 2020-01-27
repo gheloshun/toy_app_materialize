@@ -6,5 +6,6 @@ module Types
     field :delete_micropost, mutation: Mutations::DeleteMicropost
     field :follow_user, mutation: Mutations::FollowUser
     field :create_micropost, mutation: Mutations::CreateMicropost
+    field :account_activation, mutation: Mutations::AccountActivation
   end
 end
